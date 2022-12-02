@@ -1,0 +1,9 @@
+from bs4 import BeautifulSoup
+import requests
+r = requests.get("https://www.nytimes.com/international/")
+soup = BeautifulSoup(r.content,"lxml")
+mylist = soup.find_all('script',attrs={'type':'text/javascript'})
+for i in mylist:
+  Link= i.find_all()
+for i in Link:
+  print(i)
